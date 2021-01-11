@@ -4,5 +4,11 @@
     "port": 5432,
     "username": "docker",
     "password": "docker",
-    "database": "gostacj_gobarber"
+    "database": "gostacj_gobarber",
+    "migrations": [
+        "./src/database/migrations/*.ts"
+    ],
+    "cli": {
+        "migrationsDir": "./src/database/migrations"
+    }
 }
