@@ -1,6 +1,7 @@
 import User from '../models/user';
 import {getRepository} from 'typeorm';
 import {hash} from 'bcryptjs';
+import AppError from '../errors/AppError';
 interface Request{
     name: string,
     email: string,
@@ -18,7 +19,7 @@ class CreateUserService{
         });
 
         if (checkUserExists){
-            throw new Error('Email address already used by another');
+            throw new AppError('Email address already used by another');
         }
 
         const hashedPassword = await hash(password, 8);
