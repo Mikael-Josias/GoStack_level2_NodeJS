@@ -5,6 +5,8 @@ class User{
     @PrimaryGeneratedColumn('uuid')
     id: string;
     @Column()
+    avatar: string;
+    @Column()
     name: string;
     @Column()
     email: string;
